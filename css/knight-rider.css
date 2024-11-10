@@ -47,3 +47,29 @@ body {
 #box-5 {
   background-color: red;
 }
+
+#btnStart,
+#btnStop {
+  text-align: center;
+  margin-top: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 8px;
+  color: white;
+  width: 160px;
+}
+
+#btnStart {
+  background-color: red;
+}
+#btnStop {
+  background-color: blue;
+}
+
+.btn-container {
+  display: flex;
+  flex-direction: row;
+  column-gap: 10px;
+  width: fit-content;
+  height: fit-content;
+}

@@ -15,6 +15,8 @@ const colors = [
   "red",
 ];
 
+let intervalId = null;
+
 // Variables for animation
 let position = 0;
 let direction = 1; // 1 for forward, -1 for backward
@@ -27,7 +29,7 @@ function startKnightRider() {
 
   // Set colors for the current stage
   for (let i = 0; i < colors.length && position - i >= 0; i++) {
-    boxes[position - i].style.backgroundColor = colors[i];
+    boxes[position - i].style.backgroundColor = colors[colors.length - 1 - i];
   }
 
   // Update position
@@ -39,5 +41,11 @@ function startKnightRider() {
   }
 }
 
-// Run the animation every 100 milliseconds
-setInterval(startKnightRider, 100);
+$("#btnStart").on("click", function () {
+  clearInterval(intervalId);
+  intervalId = setInterval(startKnightRider, 100);
+});
+
+$("#btnStop").on("click", function () {
+  clearInterval(intervalId);
+});
